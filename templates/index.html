@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Weight Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87CEFA; /* Light Sky Blue */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+            width: 340px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 12px 0 5px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #40E0D0; /* Turquoise */
+            box-shadow: 0 0 6px rgba(64, 224, 208, 0.5);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            background: #40E0D0; /* Turquoise */
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #30c8ba; /* Slightly darker turquoise */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Predict Birth Weight of your Child</h1>
+        <form action="/predict" method="POST">
+            <label>gestation</label>
+            <input name="gestation" type="number">
+
+            <label>parity</label>
+            <input name="parity" type="number">
+
+            <label>age</label>
+            <input name="age" type="number">
+
+            <label>height</label>
+            <input name="height" type="number">
+
+            <label>weight</label>
+            <input name="weight" type="number">
+
+            <label>smoke</label>
+            <input name="smoke" type="number">
+
+            <button type="submit">Predict Birth Weight</button>
+        </form>
+        <h3>
+        Predicted Birth Weight : {{prediction}}
+        </h3>
+    </div>
+</body>
+</html>
