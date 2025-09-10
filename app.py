@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def get_cleaned_data(form_data):
     gestation = float(form_data['gestation'])
-    parity = int(form_data['parity'])
+    parity = int(float(form_data['parity']))
     age = float(form_data['age'])
     height = float(form_data['height'])
     weight = float(form_data['weight'])
